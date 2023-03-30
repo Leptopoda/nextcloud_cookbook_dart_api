@@ -1,4 +1,8 @@
 # nc_cookbook_api (EXPERIMENTAL)
+This repo contains a computer generated lib for the nextcloud cookbook app. It is an intermediate lib until the great [nextcloud](https://github.com/provokateurin/nextcloud-neon/tree/main/packages/nextcloud) dart library is ready to support both the cookbook api and some other serialisation candy we need.
+
+---
+
 This is the public API definition of the [cookbook app](https://github.com/nextcloud/cookbook) for the [nextcloud server](http://nextcloud.com).
 
 The total API is separated into two parts:
