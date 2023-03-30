@@ -93,28 +93,28 @@ void main() {
 
         expect(response.data, isNotNull);
       });
+    });
 
-      // Search for recipes for keywords, tags and categories with the named search string
-      //
-      //Future<BuiltList<RecipeStub>> search(String query) async
-      test('test search', () async {
-        final response = await instance.search(query: "Vegetarisch");
+    // Search for recipes for keywords, tags and categories with the named search string
+    //
+    //Future<BuiltList<RecipeStub>> search(String query) async
+    test('test search', () async {
+      final response = await instance.search(query: "Vegetarisch");
 
-        expect(response.data?.length, equals(2));
-      });
+      expect(response.data?.length, equals(2));
+    });
 
-      // Update a recipe
-      //
-      //Future<int> updateRecipe(int id, Recipe recipe) async
-      test('test updateRecipe', () async {
-        final recipe = RecipeBuilder()
-          ..name = "My super cool recipe"
-          ..dateCreated = DateTime.utc(2023);
-        final response =
-            await instance.updateRecipe(id: 0, recipe: recipe.build());
+    // Update a recipe
+    //
+    //Future<int> updateRecipe(int id, Recipe recipe) async
+    test('test updateRecipe', () async {
+      final recipe = RecipeBuilder()
+        ..name = "My super cool recipe"
+        ..dateCreated = DateTime.utc(2023);
+      final response =
+          await instance.updateRecipe(id: 0, recipe: recipe.build());
 
-        expect(response.data, isNotNull);
-      });
+      expect(response.data, isNotNull);
     });
   });
 }

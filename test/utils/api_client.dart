@@ -8,7 +8,7 @@ NcCookbookApi setupClient() {
     BaseOptions(
       baseUrl: 'https://localhost/apps/cookbook',
       connectTimeout: Duration(seconds: 5),
-      receiveTimeout: Duration(seconds: 3),
+      receiveTimeout: Duration(seconds: 10),
     ),
   );
 

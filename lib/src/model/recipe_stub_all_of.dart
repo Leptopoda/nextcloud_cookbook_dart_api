@@ -37,12 +37,10 @@ class _$RecipeStubAllOfSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'recipe_id';
-    yield serializers
-        .serialize(
-          object.recipeId,
-          specifiedType: const FullType(int),
-        )
-        .toString();
+    yield serializers.serialize(
+      object.recipeId,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -117,10 +115,12 @@ class _$$RecipeStubAllOfSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'recipe_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers
+              .deserialize(
+                value,
+                specifiedType: const FullType(int),
+              )
+              .toString();
           result.recipeId = valueDes;
           break;
         default:

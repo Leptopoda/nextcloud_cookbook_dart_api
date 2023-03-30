@@ -85,12 +85,10 @@ class _$RecipeStubSerializer implements PrimitiveSerializer<RecipeStub> {
       );
     }
     yield r'recipe_id';
-    yield serializers
-        .serialize(
-          object.recipeId,
-          specifiedType: const FullType(int),
-        )
-        .toString();
+    yield serializers.serialize(
+      object.recipeId,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -159,10 +157,12 @@ class _$RecipeStubSerializer implements PrimitiveSerializer<RecipeStub> {
           result.dateModified = valueDes;
           break;
         case r'recipe_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers
+              .deserialize(
+                value,
+                specifiedType: const FullType(int),
+              )
+              .toString();
           result.recipeId = valueDes;
           break;
         default:
