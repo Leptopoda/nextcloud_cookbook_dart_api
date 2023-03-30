@@ -37,10 +37,12 @@ class _$RecipeStubAllOfSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'recipe_id';
-    yield serializers.serialize(
-      object.recipeId,
-      specifiedType: const FullType(String),
-    );
+    yield serializers
+        .serialize(
+          object.recipeId,
+          specifiedType: const FullType(int),
+        )
+        .toString();
   }
 
   @override

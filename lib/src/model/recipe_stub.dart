@@ -85,10 +85,12 @@ class _$RecipeStubSerializer implements PrimitiveSerializer<RecipeStub> {
       );
     }
     yield r'recipe_id';
-    yield serializers.serialize(
-      object.recipeId,
-      specifiedType: const FullType(String),
-    );
+    yield serializers
+        .serialize(
+          object.recipeId,
+          specifiedType: const FullType(int),
+        )
+        .toString();
   }
 
   @override
