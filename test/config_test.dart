@@ -3,26 +3,34 @@ import 'package:nc_cookbook_api/nc_cookbook_api.dart';
 
 // tests for Config
 void main() {
-  final instance = ConfigBuilder();
-  // TODO add properties to the builder and call build()
-
   group(Config, () {
+    final folder = "/";
+    final updateInterval = 5;
+    var printImage = true;
+
+    final builder = ConfigBuilder()
+      ..folder = folder
+      ..updateInterval = updateInterval
+      ..printImage = printImage;
+
+    final instance = builder.build();
+
     // The folder in the user's files that contains the recipes
     // String folder
     test('to test the property `folder`', () async {
-      // TODO
+      expect(instance.folder, equals(folder));
     });
 
     // The interval between automatic rescans to rebuild the database cache in minutes
     // int updateInterval
     test('to test the property `updateInterval`', () async {
-      // TODO
+      expect(instance.updateInterval, equals(updateInterval));
     });
 
     // True, if the user wished to print the recipe images with the rest of the recipes
     // bool printImage
     test('to test the property `printImage`', () async {
-      // TODO
+      expect(instance.printImage, equals(printImage));
     });
 
     // VisibleInfoBlocks visibleInfoBlocks

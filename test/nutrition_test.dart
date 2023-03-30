@@ -3,80 +3,106 @@ import 'package:nc_cookbook_api/nc_cookbook_api.dart';
 
 // tests for Nutrition
 void main() {
-  final instance = NutritionBuilder();
-  // TODO add properties to the builder and call build()
+  final calories = "calories";
+  final carbohydrateContent = "carbohydrateContent";
+  final cholesterolContent = "cholesterolContent";
+  final fatContent = "fatContent";
+  final fiberContent = "fiberContent";
+  final proteinContent = "proteinContent";
+  final saturatedFatContent = "saturatedFatContent";
+  final servingSize = "servingSize";
+  final sodiumContent = "sodiumContent";
+  final sugarContent = "sugarContent";
+  final transFatContent = "transFatContent";
+  final unsaturatedFatContent = "unsaturatedFatContent";
+
+  final builder = NutritionBuilder()
+    ..calories = calories
+    ..carbohydrateContent = carbohydrateContent
+    ..cholesterolContent = cholesterolContent
+    ..fatContent = fatContent
+    ..fiberContent = fiberContent
+    ..proteinContent = proteinContent
+    ..saturatedFatContent = saturatedFatContent
+    ..servingSize = servingSize
+    ..sodiumContent = sodiumContent
+    ..sugarContent = sugarContent
+    ..transFatContent = transFatContent
+    ..unsaturatedFatContent = unsaturatedFatContent;
+
+  final instance = builder.build();
 
   group(Nutrition, () {
     // The number of calories for the given amount
     // String calories
     test('to test the property `calories`', () async {
-      // TODO
+      expect(instance.calories, equals(calories));
     });
 
     // The number of grams of carbohydrates
     // String carbohydrateContent
     test('to test the property `carbohydrateContent`', () async {
-      // TODO
+      expect(instance.carbohydrateContent, equals(carbohydrateContent));
     });
 
     // The number of milligrams of cholesterol
     // String cholesterolContent
     test('to test the property `cholesterolContent`', () async {
-      // TODO
+      expect(instance.cholesterolContent, equals(cholesterolContent));
     });
 
     // The number of grams of fat
     // String fatContent
     test('to test the property `fatContent`', () async {
-      // TODO
+      expect(instance.fatContent, equals(fatContent));
     });
 
     // The number of grams of fiber
     // String fiberContent
     test('to test the property `fiberContent`', () async {
-      // TODO
+      expect(instance.fiberContent, equals(fiberContent));
     });
 
     // The number of grams of protein
     // String proteinContent
     test('to test the property `proteinContent`', () async {
-      // TODO
+      expect(instance.proteinContent, equals(proteinContent));
     });
 
     // The number of grams of saturated fat
     // String saturatedFatContent
     test('to test the property `saturatedFatContent`', () async {
-      // TODO
+      expect(instance.saturatedFatContent, equals(saturatedFatContent));
     });
 
     // The serving size, in terms of the number of volume or mass
     // String servingSize
     test('to test the property `servingSize`', () async {
-      // TODO
+      expect(instance.servingSize, equals(servingSize));
     });
 
     // The number of milligrams of sodium
     // String sodiumContent
     test('to test the property `sodiumContent`', () async {
-      // TODO
+      expect(instance.sodiumContent, equals(sodiumContent));
     });
 
     // The number of grams of sugar
     // String sugarContent
     test('to test the property `sugarContent`', () async {
-      // TODO
+      expect(instance.sugarContent, equals(sugarContent));
     });
 
     // The number of grams of trans fat
     // String transFatContent
     test('to test the property `transFatContent`', () async {
-      // TODO
+      expect(instance.transFatContent, equals(transFatContent));
     });
 
     // The number of grams of unsaturated fat
     // String unsaturatedFatContent
     test('to test the property `unsaturatedFatContent`', () async {
-      // TODO
+      expect(instance.unsaturatedFatContent, equals(unsaturatedFatContent));
     });
   });
 }

@@ -3,18 +3,24 @@ import 'package:nc_cookbook_api/nc_cookbook_api.dart';
 
 // tests for Version
 void main() {
-  final instance = VersionBuilder();
-  // TODO add properties to the builder and call build()
+  final cookbookVersion = AppVersionBuilder();
+  final apiVersion = APIVersionBuilder();
+
+  final builder = VersionBuilder()
+    ..apiVersion = apiVersion
+    ..cookbookVersion = cookbookVersion;
+
+  final instance = builder.build();
 
   group(Version, () {
     // AppVersion cookbookVersion
     test('to test the property `cookbookVersion`', () async {
-      // TODO
+      expect(instance.cookbookVersion, equals(cookbookVersion));
     });
 
     // APIVersion apiVersion
     test('to test the property `apiVersion`', () async {
-      // TODO
+      expect(instance.apiVersion, equals(apiVersion));
     });
-  });
+  }, skip: true);
 }
