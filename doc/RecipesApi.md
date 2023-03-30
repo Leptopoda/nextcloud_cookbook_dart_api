@@ -76,7 +76,7 @@ import 'package:nc_cookbook_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('app_password').password = 'YOUR_PASSWORD';
 
 final api = NcCookbookApi().getRecipesApi();
-final int id = 56; // int | The id of the recipe
+final String id = id_example; // String | The id of the recipe
 
 try {
     final response = api.deleteRecipe(id);
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The id of the recipe | 
+ **id** | **String**| The id of the recipe | 
 
 ### Return type
 
@@ -120,7 +120,7 @@ import 'package:nc_cookbook_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('app_password').password = 'YOUR_PASSWORD';
 
 final api = NcCookbookApi().getRecipesApi();
-final int id = 56; // int | The id of the recipe to obtain the image for.
+final String id = id_example; // String | The id of the recipe to obtain the image for.
 final String size = size_example; // String | The size of the requested image * `full`    - Full resolution image (size full res) * `thumb`   - thumbnail of the image (size 250px) * `thumb16` - icon of the image (size 16px) by default the full size image will be returned 
 
 try {
@@ -135,7 +135,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The id of the recipe to obtain the image for. | 
+ **id** | **String**| The id of the recipe to obtain the image for. | 
  **size** | **String**| The size of the requested image * `full`    - Full resolution image (size full res) * `thumb`   - thumbnail of the image (size 250px) * `thumb16` - icon of the image (size 16px) by default the full size image will be returned  | [optional] 
 
 ### Return type
@@ -194,7 +194,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **newRecipe**
-> int newRecipe(recipe)
+> String newRecipe(recipe)
 
 Create a new recipe
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**int**
+**String**
 
 ### Authorization
 
@@ -250,7 +250,7 @@ import 'package:nc_cookbook_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('app_password').password = 'YOUR_PASSWORD';
 
 final api = NcCookbookApi().getRecipesApi();
-final int id = 56; // int | The id of the recipe
+final String id = id_example; // String | The id of the recipe
 
 try {
     final response = api.recipeDetails(id);
@@ -264,7 +264,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The id of the recipe | 
+ **id** | **String**| The id of the recipe | 
 
 ### Return type
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateRecipe**
-> int updateRecipe(id, recipe)
+> String updateRecipe(id, recipe)
 
 Update a recipe
 
@@ -338,7 +338,7 @@ import 'package:nc_cookbook_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('app_password').password = 'YOUR_PASSWORD';
 
 final api = NcCookbookApi().getRecipesApi();
-final int id = 56; // int | The id of the recipe
+final String id = id_example; // String | The id of the recipe
 final Recipe recipe = ; // Recipe | 
 
 try {
@@ -353,12 +353,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The id of the recipe | 
+ **id** | **String**| The id of the recipe | 
  **recipe** | [**Recipe**](Recipe.md)|  | 
 
 ### Return type
 
-**int**
+**String**
 
 ### Authorization
 

@@ -136,7 +136,7 @@ class RecipesApi {
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<String>> deleteRecipe({
-    required int id,
+    required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -214,7 +214,7 @@ class RecipesApi {
   /// Returns a [Future] containing a [Response] with a [Uint8List] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Uint8List>> getImage({
-    required int id,
+    required String id,
     String? size,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -375,9 +375,9 @@ class RecipesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [int] as data
+  /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<int>> newRecipe({
+  Future<Response<String>> newRecipe({
     required Recipe recipe,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -432,10 +432,10 @@ class RecipesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    int _responseData;
+    String _responseData;
 
     try {
-      _responseData = _response.data as int;
+      _responseData = (_response.data as int).toString();
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -446,7 +446,7 @@ class RecipesApi {
       );
     }
 
-    return Response<int>(
+    return Response<String>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -473,7 +473,7 @@ class RecipesApi {
   /// Returns a [Future] containing a [Response] with a [Recipe] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Recipe>> recipeDetails({
-    required int id,
+    required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -633,10 +633,10 @@ class RecipesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [int] as data
+  /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<int>> updateRecipe({
-    required int id,
+  Future<Response<String>> updateRecipe({
+    required String id,
     required Recipe recipe,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -692,10 +692,10 @@ class RecipesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    int _responseData;
+    String _responseData;
 
     try {
-      _responseData = _response.data as int;
+      _responseData = (_response.data as int).toString();
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -706,7 +706,7 @@ class RecipesApi {
       );
     }
 
-    return Response<int>(
+    return Response<String>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

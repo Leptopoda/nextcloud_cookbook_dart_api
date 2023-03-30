@@ -25,7 +25,7 @@ void main() {
     //
     //Future<String> deleteRecipe(int id) async
     test('test deleteRecipe', () async {
-      final id = 0;
+      final id = '0';
       final response = await instance.deleteRecipe(id: id);
 
       expect(response.data, equals("Recipe $id deleted successfully"));
@@ -39,7 +39,7 @@ void main() {
       final recipeWithoutImage = recipes.data
           ?.firstWhere((stub) => stub.name == "Recipe Without an image");
       final response = await instance.getImage(
-        id: int.parse(recipeWithoutImage!.recipeId),
+        id: recipeWithoutImage!.recipeId,
         headers: <String, dynamic>{
           "Accept": "image/svg+xml",
         },
@@ -50,7 +50,7 @@ void main() {
       final recipeWithImage = recipes.data
           ?.firstWhere((stub) => stub.name == "Chef John's Gazpacho");
       final response2 = await instance.getImage(
-        id: int.parse(recipeWithImage!.recipeId),
+        id: recipeWithImage!.recipeId,
         headers: <String, dynamic>{
           "Accept": "image/jpeg",
         },
@@ -88,8 +88,7 @@ void main() {
       final recipes = await instance.listRecipes();
 
       recipes.data?.forEach((recipe) async {
-        final response =
-            await instance.recipeDetails(id: int.parse(recipe.recipeId));
+        final response = await instance.recipeDetails(id: recipe.recipeId);
 
         expect(response.data, isNotNull);
       });
@@ -112,7 +111,7 @@ void main() {
         ..name = "My super cool recipe"
         ..dateCreated = DateTime.utc(2023);
       final response =
-          await instance.updateRecipe(id: 0, recipe: recipe.build());
+          await instance.updateRecipe(id: '0', recipe: recipe.build());
 
       expect(response.data, isNotNull);
     });

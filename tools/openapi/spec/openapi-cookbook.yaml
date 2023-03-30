@@ -3,14 +3,14 @@ info:
   title: Nextcloud cookbook app
   description: >-
     This is the public API definition of the [cookbook app](https://github.com/nextcloud/cookbook) for the [nextcloud server](http://nextcloud.com).
-    
-    
+
+
     The total API is separated into two parts:
 
     - There is the public API part that can be used from 3rd party apps and scripts.
 
     - There is the internal API that is used only by the web app of the cookbook app. This is described here.
-    
+
 
     The internal part is intended only to be used by the internal web app.
     It uses session based authentication and thus requires a `requesttoken` to protect against CSRF attacks.
@@ -22,15 +22,15 @@ info:
     Thus, no session is created and no cookies or similar needs to be handled.
     Technically, there is a CORS preflight possible but it is not required for the function of the endpoints.
 
-    
+
     Further contact can be found on the matrix.org server in the room [#nextcloud-cookbook:matrix.org](https://matrix.to/#/#nextcloud-cookbook:matrix.org) for general questions.
     Additionally, there is [#nextcloud-cookbook-integration:matrix.org](https://matrix.to/#/#nextcloud-cookbook-integration:matrix.org) for questions related to the API and third party integration.
     Further information on the different versions can be found in [the API overview page](https://nextcloud.github.io/cookbook/dev/api/index).
   #contact:
-    #email: apiteam@swagger.io
+  #email: apiteam@swagger.io
   license:
     name: AGPL-3
-    url: 'http://www.gnu.org/licenses/agpl-3.0.de.html'
+    url: "http://www.gnu.org/licenses/agpl-3.0.de.html"
   version: 0.1.0
 
 #externalDocs:
@@ -38,8 +38,8 @@ info:
 #  url: 'http://swagger.io'
 
 servers:
-  - url: 'http://localhost:8000/apps/cookbook'
-  - url: '{protocol}://{server}'
+  - url: "http://localhost:8000/apps/cookbook"
+  - url: "{protocol}://{server}"
     variables:
       protocol:
         enum:
@@ -47,7 +47,7 @@ servers:
           - https
         default: https
       server:
-        default: 'example.com'
+        default: "example.com"
 
 tags:
   - name: Recipes
@@ -58,8 +58,6 @@ tags:
     description: Access to tags/keywords of recipes
   - name: Misc
     description: Other API endpoints
-
-
 
 components:
   schemas:
@@ -81,7 +79,7 @@ components:
       $ref: objects.yaml#/Url
     Version:
       $ref: objects.yaml#/Version
-  
+
   securitySchemes:
     app_password:
       type: http
@@ -92,14 +90,13 @@ security:
   - app_password: []
 
 paths:
-  
   /api/version:
     get:
-      tags: [ Misc ]
+      tags: [Misc]
       summary: Get the version of the API endpoint
       operationId: version
       responses:
-        '200':
+        "200":
           description: API version
           content:
             application/json:
@@ -107,7 +104,7 @@ paths:
                 $ref: "#/components/schemas/Version"
   /api/v1/reindex:
     post:
-      tags: [ Misc ]
+      tags: [Misc]
       summary: Trigger a rescan of all recipes into the caching database
       operationId: reindex
       responses:
@@ -120,7 +117,7 @@ paths:
                 example: Search index rebuilt successfully
   /api/v1/config:
     get:
-      tags: [ Misc ]
+      tags: [Misc]
       summary: Get the current configuration of the app
       operationId: getConfig
       responses:
@@ -131,7 +128,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/Config"
     post:
-      tags: [ Misc ]
+      tags: [Misc]
       summary: Set the configuration for the current user
       operationId: setConfig
       requestBody:
@@ -148,10 +145,10 @@ paths:
               schema:
                 type: string
                 example: OK
-  
+
   /api/v1/import:
     post:
-      tags: [ Recipes ]
+      tags: [Recipes]
       summary: Import a recipe using schema.org metadata from a website
       operationId: import
       requestBody:
@@ -183,7 +180,7 @@ paths:
                 $ref: "#/components/schemas/Error"
   /api/v1/recipes/{id}/image:
     get:
-      tags: [ Recipes ]
+      tags: [Recipes]
       summary: Get the main image of a recipe. If no image is stored a fallback image is delivered.
       operationId: getImage
       parameters:
@@ -192,7 +189,7 @@ paths:
           description: The id of the recipe to obtain the image for.
           required: true
           schema:
-            type: integer
+            type: string
         - in: query
           name: size
           description: >
@@ -230,7 +227,7 @@ paths:
         schema:
           type: string
     get:
-      tags: [ Recipes ]
+      tags: [Recipes]
       summary: Search for recipes for keywords, tags and categories with the named search string
       operationId: search
       responses:
@@ -249,7 +246,7 @@ paths:
                 description: The error message
   /api/v1/recipes:
     get:
-      tags: [ Recipes ]
+      tags: [Recipes]
       summary: Get all recipes in the database
       operationId: listRecipes
       responses:
@@ -260,13 +257,13 @@ paths:
               schema:
                 $ref: "#/components/schemas/StubList"
     post:
-      tags: [ Recipes ]
+      tags: [Recipes]
       summary: Create a new recipe
       operationId: newRecipe
       requestBody:
         description: |
           A JSON representation of the recipe to be saved.
-          
+
           See also the structure at https://schema.org/Recipe
         required: true
         content:
@@ -288,7 +285,7 @@ paths:
           content:
             application/json:
               schema:
-                type: integer
+                type: string
                 example: 2462
                 description: The id of the newly created recipe
         409:
@@ -310,9 +307,9 @@ paths:
         required: true
         description: The id of the recipe
         schema:
-          type: integer
+          type: string
     get:
-      tags: [ Recipes ]
+      tags: [Recipes]
       summary: Get a single recipe from the server
       operationId: recipeDetails
       responses:
@@ -327,11 +324,11 @@ paths:
           content:
             application/json:
               schema:
-                type: integer
-                example: 2345
+                type: string
+                example: "2345"
                 description: The id of the recipe that was not found
     put:
-      tags: [ Recipes ]
+      tags: [Recipes]
       summary: Update a recipe
       operationId: updateRecipe
       requestBody:
@@ -346,18 +343,18 @@ paths:
           content:
             application/json:
               schema:
-                type: integer
+                type: string
                 description: The id of the updated recipe
-                example: 2345
+                example: "2345"
         422:
           description: There was no name in the request given for the recipe. Cannot save the recipe.
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-        
+
     delete:
-      tags: [ Recipes ]
+      tags: [Recipes]
       summary: Delete an existing recipe
       operationId: deleteRecipe
       responses:
@@ -376,14 +373,14 @@ paths:
                 type: string
                 example: Recipe with id 2345 was not found.
                 description: Error message
-  
+
   /api/v1/keywords:
     get:
-      tags: [ Tags ]
+      tags: [Tags]
       summary: Get all known keywords
       operationId: listKeywords
       responses:
-        '200':
+        "200":
           description: Successfully obtained all keywords
           content:
             application/json:
@@ -394,7 +391,7 @@ paths:
 
   /api/v1/tags/{keywords}:
     get:
-      tags: [ Tags ]
+      tags: [Tags]
       summary: Get all recipes associated with certain keywords
       operationId: recipesWithKeyword
       parameters:
@@ -419,18 +416,18 @@ paths:
               schema:
                 type: string
                 example: "SQLException: Something went wrong."
-  
+
   /api/v1/categories:
     get:
-      tags: [ Categories ]
+      tags: [Categories]
       summary: Get all known categories
       operationId: listCategories
       responses:
         200:
           description: >-
             Sucessfully obtained all categories
-            
-            
+
+
             Please note: A category name of `*` indicates the number of
             recipes with no category associated.
           content:
@@ -444,11 +441,11 @@ paths:
                   recipe_count: 21
                 - name: Lunch
                   recipe_count: 10
-                - name: '*'
+                - name: "*"
                   recipe_count: 3
   /api/v1/category/{category}:
     get:
-      tags: [ Categories ]
+      tags: [Categories]
       summary: Get all recipes of a certain category
       operationId: recipesInCategory
       parameters:
@@ -457,8 +454,8 @@ paths:
           required: true
           description: >-
             The name of the category to be queried as urlencoded string
-            
-            
+
+
             Put the string `_` to obtain all recipes with no category
           schema:
             type: string
@@ -478,7 +475,7 @@ paths:
                 description: The error message
                 example: Could not find category foo.
     put:
-      tags: [ Categories ]
+      tags: [Categories]
       summary: Rename a category
       operationId: renameCategory
       parameters:
@@ -487,8 +484,8 @@ paths:
           required: true
           description: >-
             The name of the category to be queried as urlencoded string
-            
-            
+
+
             Put the string `_` to obtain all recipes with no category
           schema:
             type: string
