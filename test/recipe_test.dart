@@ -12,9 +12,9 @@ void main() {
     final imageUrl = "foo.bar/image";
     final imagePlaceholderUrl = "foo.bar/placeholder/image";
     final id = "Testing with a String";
-    final prepTime = "PT0H2M0S";
-    final cookTime = "PT0H2M0S";
-    final totalTime = "PT0H2M0S";
+    final prepTime = Duration(minutes: 2);
+    final cookTime = Duration(minutes: 2);
+    final totalTime = Duration(minutes: 2);
     final description = "A nice recipe everyone should know";
     final url = "foo.bar/original_recipe";
     final image = "foo.bar/original_image";

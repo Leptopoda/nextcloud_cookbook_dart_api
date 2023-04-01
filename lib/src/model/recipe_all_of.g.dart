@@ -12,14 +12,14 @@ abstract class RecipeAllOfBuilder {
   String? get id;
   set id(String? id);
 
-  String? get prepTime;
-  set prepTime(String? prepTime);
+  Duration? get prepTime;
+  set prepTime(Duration? prepTime);
 
-  String? get cookTime;
-  set cookTime(String? cookTime);
+  Duration? get cookTime;
+  set cookTime(Duration? cookTime);
 
-  String? get totalTime;
-  set totalTime(String? totalTime);
+  Duration? get totalTime;
+  set totalTime(Duration? totalTime);
 
   String? get description;
   set description(String? description);
@@ -53,11 +53,11 @@ class _$$RecipeAllOf extends $RecipeAllOf {
   @override
   final String? id;
   @override
-  final String? prepTime;
+  final Duration? prepTime;
   @override
-  final String? cookTime;
+  final Duration? cookTime;
   @override
-  final String? totalTime;
+  final Duration? totalTime;
   @override
   final String description;
   @override
@@ -185,17 +185,17 @@ class $RecipeAllOfBuilder
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
 
-  String? _prepTime;
-  String? get prepTime => _$this._prepTime;
-  set prepTime(covariant String? prepTime) => _$this._prepTime = prepTime;
+  Duration? _prepTime;
+  Duration? get prepTime => _$this._prepTime;
+  set prepTime(covariant Duration? prepTime) => _$this._prepTime = prepTime;
 
-  String? _cookTime;
-  String? get cookTime => _$this._cookTime;
-  set cookTime(covariant String? cookTime) => _$this._cookTime = cookTime;
+  Duration? _cookTime;
+  Duration? get cookTime => _$this._cookTime;
+  set cookTime(covariant Duration? cookTime) => _$this._cookTime = cookTime;
 
-  String? _totalTime;
-  String? get totalTime => _$this._totalTime;
-  set totalTime(covariant String? totalTime) => _$this._totalTime = totalTime;
+  Duration? _totalTime;
+  Duration? get totalTime => _$this._totalTime;
+  set totalTime(covariant Duration? totalTime) => _$this._totalTime = totalTime;
 
   String? _description;
   String? get description => _$this._description;

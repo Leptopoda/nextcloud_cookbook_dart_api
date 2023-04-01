@@ -93,14 +93,14 @@ class _$RecipeSerializer implements PrimitiveSerializer<Recipe> {
         ? null
         : serializers.serialize(
             object.totalTime,
-            specifiedType: const FullType.nullable(String),
+            specifiedType: const FullType.nullable(Duration),
           );
     yield r'cookTime';
     yield object.cookTime == null
         ? null
         : serializers.serialize(
             object.cookTime,
-            specifiedType: const FullType.nullable(String),
+            specifiedType: const FullType.nullable(Duration),
           );
     yield r'description';
     yield serializers.serialize(
@@ -129,7 +129,7 @@ class _$RecipeSerializer implements PrimitiveSerializer<Recipe> {
         ? null
         : serializers.serialize(
             object.prepTime,
-            specifiedType: const FullType.nullable(String),
+            specifiedType: const FullType.nullable(Duration),
           );
     yield r'imagePlaceholderUrl';
     yield serializers.serialize(
@@ -227,16 +227,16 @@ class _$RecipeSerializer implements PrimitiveSerializer<Recipe> {
         case r'totalTime':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(Duration),
+          ) as Duration?;
           if (valueDes == null) continue;
           result.totalTime = valueDes;
           break;
         case r'cookTime':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(Duration),
+          ) as Duration?;
           if (valueDes == null) continue;
           result.cookTime = valueDes;
           break;
@@ -271,8 +271,8 @@ class _$RecipeSerializer implements PrimitiveSerializer<Recipe> {
         case r'prepTime':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(Duration),
+          ) as Duration?;
           if (valueDes == null) continue;
           result.prepTime = valueDes;
           break;

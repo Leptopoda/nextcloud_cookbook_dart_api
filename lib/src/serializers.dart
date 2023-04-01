@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_import
 
+import 'package:built_value/iso_8601_duration_serializer.dart';
 import 'package:one_of_serializer/any_of_serializer.dart';
 import 'package:one_of_serializer/one_of_serializer.dart';
 import 'package:built_collection/built_collection.dart';
@@ -79,7 +80,8 @@ Serializers serializers = (_$serializers.toBuilder()
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())
-      ..add(Iso8601DateTimeSerializer()))
+      ..add(Iso8601DateTimeSerializer())
+      ..add(Iso8601DurationSerializer()))
     .build();
 
 Serializers standardSerializers =

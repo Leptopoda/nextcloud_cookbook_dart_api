@@ -34,15 +34,15 @@ abstract class RecipeAllOf {
 
   /// The time required for preparation in ISO8601 format
   @BuiltValueField(wireName: r'prepTime')
-  String? get prepTime;
+  Duration? get prepTime;
 
   /// The time required for cooking in ISO8601 format
   @BuiltValueField(wireName: r'cookTime')
-  String? get cookTime;
+  Duration? get cookTime;
 
   /// The time required for the complete processing in ISO8601 format
   @BuiltValueField(wireName: r'totalTime')
-  String? get totalTime;
+  Duration? get totalTime;
 
   /// A description of the recipe or the empty string
   @BuiltValueField(wireName: r'description')
@@ -104,21 +104,21 @@ class _$RecipeAllOfSerializer implements PrimitiveSerializer<RecipeAllOf> {
         ? null
         : serializers.serialize(
             object.prepTime,
-            specifiedType: const FullType.nullable(String),
+            specifiedType: const FullType.nullable(Duration),
           );
     yield r'cookTime';
     yield object.cookTime == null
         ? null
         : serializers.serialize(
             object.cookTime,
-            specifiedType: const FullType.nullable(String),
+            specifiedType: const FullType.nullable(Duration),
           );
     yield r'totalTime';
     yield object.totalTime == null
         ? null
         : serializers.serialize(
             object.totalTime,
-            specifiedType: const FullType.nullable(String),
+            specifiedType: const FullType.nullable(Duration),
           );
     yield r'description';
     yield serializers.serialize(
@@ -246,24 +246,24 @@ class _$$RecipeAllOfSerializer implements PrimitiveSerializer<$RecipeAllOf> {
         case r'prepTime':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(Duration),
+          ) as Duration?;
           if (valueDes == null) continue;
           result.prepTime = valueDes;
           break;
         case r'cookTime':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(Duration),
+          ) as Duration?;
           if (valueDes == null) continue;
           result.cookTime = valueDes;
           break;
         case r'totalTime':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(Duration),
+          ) as Duration?;
           if (valueDes == null) continue;
           result.totalTime = valueDes;
           break;
