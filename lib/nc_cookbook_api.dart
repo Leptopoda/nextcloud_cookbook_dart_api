@@ -30,3 +30,5 @@ export 'package:nc_cookbook_api/src/model/rename_category_request.dart';
 export 'package:nc_cookbook_api/src/model/url.dart';
 export 'package:nc_cookbook_api/src/model/version.dart';
 export 'package:nc_cookbook_api/src/model/visible_info_blocks.dart';
+
+export 'package:nc_cookbook_api/src/version_supported.dart';
