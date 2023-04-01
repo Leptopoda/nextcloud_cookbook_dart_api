@@ -1,3 +1,4 @@
+import 'package:built_collection/built_collection.dart';
 import 'package:nc_cookbook_api/nc_cookbook_api.dart';
 import 'package:test/test.dart';
 
@@ -62,7 +63,20 @@ void main() {
     //
     //Future<Version> version() async
     test('test version', () async {
-      // TODO
+      final response = await instance.version();
+
+      final version = Version(
+        (b) => b
+          ..apiVersion = APIVersion(
+            (b) => b
+              ..epoch = 0
+              ..major = 1
+              ..minor = 1,
+          ).toBuilder()
+          ..cookbookVersion = BuiltList<int>([0, 10, 2]).toBuilder(),
+      );
+
+      expect(response.data, equals(version));
     });
   });
 }

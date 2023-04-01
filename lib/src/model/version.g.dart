@@ -8,14 +8,19 @@ part of 'version.dart';
 
 class _$Version extends Version {
   @override
-  final AppVersion? cookbookVersion;
+  final BuiltList<int> cookbookVersion;
   @override
-  final APIVersion? apiVersion;
+  final APIVersion apiVersion;
 
   factory _$Version([void Function(VersionBuilder)? updates]) =>
       (new VersionBuilder()..update(updates))._build();
 
-  _$Version._({this.cookbookVersion, this.apiVersion}) : super._();
+  _$Version._({required this.cookbookVersion, required this.apiVersion})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        cookbookVersion, r'Version', 'cookbookVersion');
+    BuiltValueNullFieldError.checkNotNull(apiVersion, r'Version', 'apiVersion');
+  }
 
   @override
   Version rebuild(void Function(VersionBuilder) updates) =>
@@ -53,10 +58,10 @@ class _$Version extends Version {
 class VersionBuilder implements Builder<Version, VersionBuilder> {
   _$Version? _$v;
 
-  AppVersionBuilder? _cookbookVersion;
-  AppVersionBuilder get cookbookVersion =>
-      _$this._cookbookVersion ??= new AppVersionBuilder();
-  set cookbookVersion(AppVersionBuilder? cookbookVersion) =>
+  ListBuilder<int>? _cookbookVersion;
+  ListBuilder<int> get cookbookVersion =>
+      _$this._cookbookVersion ??= new ListBuilder<int>();
+  set cookbookVersion(ListBuilder<int>? cookbookVersion) =>
       _$this._cookbookVersion = cookbookVersion;
 
   APIVersionBuilder? _apiVersion;
@@ -72,8 +77,8 @@ class VersionBuilder implements Builder<Version, VersionBuilder> {
   VersionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _cookbookVersion = $v.cookbookVersion?.toBuilder();
-      _apiVersion = $v.apiVersion?.toBuilder();
+      _cookbookVersion = $v.cookbookVersion.toBuilder();
+      _apiVersion = $v.apiVersion.toBuilder();
       _$v = null;
     }
     return this;
@@ -98,15 +103,15 @@ class VersionBuilder implements Builder<Version, VersionBuilder> {
     try {
       _$result = _$v ??
           new _$Version._(
-              cookbookVersion: _cookbookVersion?.build(),
-              apiVersion: _apiVersion?.build());
+              cookbookVersion: cookbookVersion.build(),
+              apiVersion: apiVersion.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'cookbookVersion';
-        _cookbookVersion?.build();
+        cookbookVersion.build();
         _$failedField = 'apiVersion';
-        _apiVersion?.build();
+        apiVersion.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Version', _$failedField, e.toString());

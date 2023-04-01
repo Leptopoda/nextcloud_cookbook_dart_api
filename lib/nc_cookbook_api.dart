@@ -15,14 +15,12 @@ export 'package:nc_cookbook_api/src/api/recipes_api.dart';
 export 'package:nc_cookbook_api/src/api/tags_api.dart';
 
 export 'package:nc_cookbook_api/src/model/api_version.dart';
-export 'package:nc_cookbook_api/src/model/app_version.dart';
 export 'package:nc_cookbook_api/src/model/category.dart';
 export 'package:nc_cookbook_api/src/model/category_information.dart';
 export 'package:nc_cookbook_api/src/model/config.dart';
 export 'package:nc_cookbook_api/src/model/error.dart';
 export 'package:nc_cookbook_api/src/model/keyword.dart';
 export 'package:nc_cookbook_api/src/model/nutrition.dart';
-export 'package:nc_cookbook_api/src/model/pre_release_version_inner.dart';
 export 'package:nc_cookbook_api/src/model/recipe.dart';
 export 'package:nc_cookbook_api/src/model/recipe_all_of.dart';
 export 'package:nc_cookbook_api/src/model/recipe_stub.dart';

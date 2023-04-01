@@ -16,14 +16,12 @@ import 'package:nc_cookbook_api/src/date_serializer.dart';
 import 'package:nc_cookbook_api/src/model/date.dart';
 
 import 'package:nc_cookbook_api/src/model/api_version.dart';
-import 'package:nc_cookbook_api/src/model/app_version.dart';
 import 'package:nc_cookbook_api/src/model/category.dart';
 import 'package:nc_cookbook_api/src/model/category_information.dart';
 import 'package:nc_cookbook_api/src/model/config.dart';
 import 'package:nc_cookbook_api/src/model/error.dart';
 import 'package:nc_cookbook_api/src/model/keyword.dart';
 import 'package:nc_cookbook_api/src/model/nutrition.dart';
-import 'package:nc_cookbook_api/src/model/pre_release_version_inner.dart';
 import 'package:nc_cookbook_api/src/model/recipe.dart';
 import 'package:nc_cookbook_api/src/model/recipe_all_of.dart';
 import 'package:nc_cookbook_api/src/model/recipe_stub.dart';
@@ -38,7 +36,6 @@ part 'serializers.g.dart';
 
 @SerializersFor([
   APIVersion,
-  AppVersion,
   Category,
   CategoryInformation,
   $CategoryInformation,
@@ -46,7 +43,6 @@ part 'serializers.g.dart';
   Error,
   Keyword,
   Nutrition,
-  PreReleaseVersionInner,
   Recipe,
   RecipeAllOf,
   $RecipeAllOf,

@@ -15,6 +15,7 @@ NcCookbookApi setupClient() {
   client.httpClientAdapter = IOHttpClientAdapter(
     onHttpClientCreate: (client) {
       client.badCertificateCallback = (cert, host, port) => true;
+      return client;
     },
   );
 

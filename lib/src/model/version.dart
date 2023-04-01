@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:nc_cookbook_api/src/model/api_version.dart';
-import 'package:nc_cookbook_api/src/model/app_version.dart';
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,15 +13,16 @@ part 'version.g.dart';
 /// Version
 ///
 /// Properties:
-/// * [cookbookVersion]
+/// * [cookbookVersion] - The installed release of the cookbook app
 /// * [apiVersion]
 @BuiltValue()
 abstract class Version implements Built<Version, VersionBuilder> {
+  /// The installed release of the cookbook app
   @BuiltValueField(wireName: r'cookbook_version')
-  AppVersion? get cookbookVersion;
+  BuiltList<int> get cookbookVersion;
 
   @BuiltValueField(wireName: r'api_version')
-  APIVersion? get apiVersion;
+  APIVersion get apiVersion;
 
   Version._();
 
@@ -46,20 +47,16 @@ class _$VersionSerializer implements PrimitiveSerializer<Version> {
     Version object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.cookbookVersion != null) {
-      yield r'cookbook_version';
-      yield serializers.serialize(
-        object.cookbookVersion,
-        specifiedType: const FullType(AppVersion),
-      );
-    }
-    if (object.apiVersion != null) {
-      yield r'api_version';
-      yield serializers.serialize(
-        object.apiVersion,
-        specifiedType: const FullType(APIVersion),
-      );
-    }
+    yield r'cookbook_version';
+    yield serializers.serialize(
+      object.cookbookVersion,
+      specifiedType: const FullType(BuiltList, [FullType(int)]),
+    );
+    yield r'api_version';
+    yield serializers.serialize(
+      object.apiVersion,
+      specifiedType: const FullType(APIVersion),
+    );
   }
 
   @override
@@ -88,8 +85,8 @@ class _$VersionSerializer implements PrimitiveSerializer<Version> {
         case r'cookbook_version':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AppVersion),
-          ) as AppVersion;
+            specifiedType: const FullType(BuiltList, [FullType(int)]),
+          ) as BuiltList<int>;
           result.cookbookVersion.replace(valueDes);
           break;
         case r'api_version':

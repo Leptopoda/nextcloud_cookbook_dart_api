@@ -99,14 +99,12 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [APIVersion](doc/APIVersion.md)
- - [AppVersion](doc/AppVersion.md)
  - [Category](doc/Category.md)
  - [CategoryInformation](doc/CategoryInformation.md)
  - [Config](doc/Config.md)
  - [Error](doc/Error.md)
  - [Keyword](doc/Keyword.md)
  - [Nutrition](doc/Nutrition.md)
- - [PreReleaseVersionInner](doc/PreReleaseVersionInner.md)
  - [Recipe](doc/Recipe.md)
  - [RecipeAllOf](doc/RecipeAllOf.md)
  - [RecipeStub](doc/RecipeStub.md)

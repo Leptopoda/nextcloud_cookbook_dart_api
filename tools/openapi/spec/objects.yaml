@@ -389,7 +389,7 @@ RecipeList:
       dateModified: "2021-05-23T17:10:25+0000"
       dateCreated: "2021-05-23T17:10:25+0000"
 
-ReleaseVersion:
+AppVersion:
   type: array
   items:
     type: integer
@@ -397,22 +397,6 @@ ReleaseVersion:
   maxItems: 3
   description: The installed release of the cookbook app
   example: [0, 9, 14]
-
-PreReleaseVersion:
-  type: array
-  items:
-    oneOf:
-      - type: integer
-      - type: string
-  minItems: 4
-  maxItems: 4
-  description: The installed pre-release of the cookbook app
-  example: [0, 9, 14, "-rc1"]
-
-AppVersion:
-  oneOf:
-    - $ref: "#/ReleaseVersion"
-    - $ref: "#/PreReleaseVersion"
 
 APIVersion:
   type: object
@@ -451,3 +435,6 @@ Version:
       $ref: "#/AppVersion"
     api_version:
       $ref: "#/APIVersion"
+  required:
+    - "cookbook_version"
+    - "api_version"

@@ -12,13 +12,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add($RecipeStubAllOf.serializer)
       ..add($RecipeStubInformation.serializer)
       ..add(APIVersion.serializer)
-      ..add(AppVersion.serializer)
       ..add(Category.serializer)
       ..add(Config.serializer)
       ..add(Error.serializer)
       ..add(Keyword.serializer)
       ..add(Nutrition.serializer)
-      ..add(PreReleaseVersionInner.serializer)
       ..add(Recipe.serializer)
       ..add(RecipeStub.serializer)
       ..add(RenameCategoryRequest.serializer)
@@ -42,7 +40,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>()))
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => new ListBuilder<int>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint
