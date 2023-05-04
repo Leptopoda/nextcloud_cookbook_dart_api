@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:nc_cookbook_api/src/model/recipe_stub_all_of_recipe_id.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,12 +12,11 @@ part 'recipe_stub_all_of.g.dart';
 /// RecipeStubAllOf
 ///
 /// Properties:
-/// * [recipeId] - The index of the recipe. Note this is a string and might change its appearance in the future.
+/// * [recipeId]
 @BuiltValue(instantiable: false)
 abstract class RecipeStubAllOf {
-  /// The index of the recipe. Note this is a string and might change its appearance in the future.
   @BuiltValueField(wireName: r'recipe_id')
-  String get recipeId;
+  RecipeStubAllOfRecipeId get recipeId;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RecipeStubAllOf> get serializer =>
@@ -39,7 +39,7 @@ class _$RecipeStubAllOfSerializer
     yield r'recipe_id';
     yield serializers.serialize(
       object.recipeId,
-      specifiedType: const FullType(String),
+      specifiedType: const FullType(RecipeStubAllOfRecipeId),
     );
   }
 
@@ -115,13 +115,11 @@ class _$$RecipeStubAllOfSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'recipe_id':
-          final valueDes = serializers
-              .deserialize(
-                value,
-                specifiedType: const FullType(int),
-              )
-              .toString();
-          result.recipeId = valueDes;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(RecipeStubAllOfRecipeId),
+          ) as RecipeStubAllOfRecipeId;
+          result.recipeId.replace(valueDes);
           break;
         default:
           unhandled.add(key);

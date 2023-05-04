@@ -138,7 +138,9 @@ RecipeStub:
     - type: object
       properties:
         recipe_id:
-          type: string
+          oneOf:
+            - type: string
+            - type: integer
           description: The index of the recipe. Note this is a string and might change its appearance in the future.
           example: "1"
       required:

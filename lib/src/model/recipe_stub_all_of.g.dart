@@ -9,13 +9,13 @@ part of 'recipe_stub_all_of.dart';
 abstract class RecipeStubAllOfBuilder {
   void replace(RecipeStubAllOf other);
   void update(void Function(RecipeStubAllOfBuilder) updates);
-  String? get recipeId;
-  set recipeId(String? recipeId);
+  RecipeStubAllOfRecipeIdBuilder get recipeId;
+  set recipeId(RecipeStubAllOfRecipeIdBuilder? recipeId);
 }
 
 class _$$RecipeStubAllOf extends $RecipeStubAllOf {
   @override
-  final String recipeId;
+  final RecipeStubAllOfRecipeId recipeId;
 
   factory _$$RecipeStubAllOf(
           [void Function($RecipeStubAllOfBuilder)? updates]) =>
@@ -62,9 +62,11 @@ class $RecipeStubAllOfBuilder
         RecipeStubAllOfBuilder {
   _$$RecipeStubAllOf? _$v;
 
-  String? _recipeId;
-  String? get recipeId => _$this._recipeId;
-  set recipeId(covariant String? recipeId) => _$this._recipeId = recipeId;
+  RecipeStubAllOfRecipeIdBuilder? _recipeId;
+  RecipeStubAllOfRecipeIdBuilder get recipeId =>
+      _$this._recipeId ??= new RecipeStubAllOfRecipeIdBuilder();
+  set recipeId(covariant RecipeStubAllOfRecipeIdBuilder? recipeId) =>
+      _$this._recipeId = recipeId;
 
   $RecipeStubAllOfBuilder() {
     $RecipeStubAllOf._defaults(this);
@@ -73,7 +75,7 @@ class $RecipeStubAllOfBuilder
   $RecipeStubAllOfBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _recipeId = $v.recipeId;
+      _recipeId = $v.recipeId.toBuilder();
       _$v = null;
     }
     return this;
@@ -94,10 +96,20 @@ class $RecipeStubAllOfBuilder
   $RecipeStubAllOf build() => _build();
 
   _$$RecipeStubAllOf _build() {
-    final _$result = _$v ??
-        new _$$RecipeStubAllOf._(
-            recipeId: BuiltValueNullFieldError.checkNotNull(
-                recipeId, r'$RecipeStubAllOf', 'recipeId'));
+    _$$RecipeStubAllOf _$result;
+    try {
+      _$result = _$v ?? new _$$RecipeStubAllOf._(recipeId: recipeId.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'recipeId';
+        recipeId.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'$RecipeStubAllOf', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

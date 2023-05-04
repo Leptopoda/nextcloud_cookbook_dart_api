@@ -1,3 +1,4 @@
+import 'package:one_of/one_of.dart';
 import 'package:test/test.dart';
 import 'package:nc_cookbook_api/nc_cookbook_api.dart';
 
@@ -18,7 +19,9 @@ void main() {
     ..dateModified = dateModified
     ..imageUrl = imageUrl
     ..imagePlaceholderUrl = imagePlaceholderUrl
-    ..recipeId = recipeId;
+    ..recipeId = RecipeStubAllOfRecipeId(
+      (b) => b..oneOf = OneOf1(value: recipeId),
+    ).toBuilder();
 
   final instance = builder.build();
 
@@ -68,7 +71,17 @@ void main() {
     // The index of the recipe. Note this is a string and might change its appearance in the future.
     // String recipeId
     test('to test the property `recipeId`', () async {
-      expect(instance.recipeId, equals(recipeId));
+      const recipeIdInt = 10;
+      builder.update(
+        (b) => b
+          ..recipeId = RecipeStubAllOfRecipeId(
+            (b) => b..oneOf = OneOf1(value: recipeIdInt),
+          ).toBuilder(),
+      );
+      final instanceInt = builder.build();
+
+      expect(instance.recipeId.oneOf.value, equals(recipeId));
+      expect(instanceInt.recipeId.oneOf.value, equals(recipeIdInt));
     });
   });
 }

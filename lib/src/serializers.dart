@@ -26,6 +26,7 @@ import 'package:nc_cookbook_api/src/model/recipe.dart';
 import 'package:nc_cookbook_api/src/model/recipe_all_of.dart';
 import 'package:nc_cookbook_api/src/model/recipe_stub.dart';
 import 'package:nc_cookbook_api/src/model/recipe_stub_all_of.dart';
+import 'package:nc_cookbook_api/src/model/recipe_stub_all_of_recipe_id.dart';
 import 'package:nc_cookbook_api/src/model/recipe_stub_information.dart';
 import 'package:nc_cookbook_api/src/model/rename_category_request.dart';
 import 'package:nc_cookbook_api/src/model/url.dart';
@@ -49,6 +50,7 @@ part 'serializers.g.dart';
   RecipeStub,
   RecipeStubAllOf,
   $RecipeStubAllOf,
+  RecipeStubAllOfRecipeId,
   RecipeStubInformation,
   $RecipeStubInformation,
   RenameCategoryRequest,

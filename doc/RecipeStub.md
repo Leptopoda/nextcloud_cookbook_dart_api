@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **dateModified** | [**DateTime**](DateTime.md) | The date the recipe was modified lastly in the app | [optional] 
 **imageUrl** | **String** | The URL of the recipe image | [default to '']
 **imagePlaceholderUrl** | **String** | The URL of the placeholder of the recipe image | [default to '']
-**recipeId** | **String** | The index of the recipe. Note this is a string and might change its appearance in the future. | 
+**recipeId** | [**RecipeStubAllOfRecipeId**](RecipeStubAllOfRecipeId.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

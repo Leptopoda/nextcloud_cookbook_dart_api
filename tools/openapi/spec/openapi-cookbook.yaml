@@ -285,7 +285,7 @@ paths:
           content:
             application/json:
               schema:
-                type: string
+                type: integer
                 example: 2462
                 description: The id of the newly created recipe
         409:
@@ -343,9 +343,9 @@ paths:
           content:
             application/json:
               schema:
-                type: string
+                type: integer
                 description: The id of the updated recipe
-                example: "2345"
+                example: 2345
         422:
           description: There was no name in the request given for the recipe. Cannot save the recipe.
           content:
