@@ -8,7 +8,7 @@ part of 'recipe_stub.dart';
 
 class _$RecipeStub extends RecipeStub {
   @override
-  final String recipeId;
+  final RecipeStubAllOfRecipeId recipeId;
   @override
   final String name;
   @override
@@ -99,9 +99,11 @@ class RecipeStubBuilder
         RecipeStubInformationBuilder {
   _$RecipeStub? _$v;
 
-  String? _recipeId;
-  String? get recipeId => _$this._recipeId;
-  set recipeId(covariant String? recipeId) => _$this._recipeId = recipeId;
+  RecipeStubAllOfRecipeIdBuilder? _recipeId;
+  RecipeStubAllOfRecipeIdBuilder get recipeId =>
+      _$this._recipeId ??= new RecipeStubAllOfRecipeIdBuilder();
+  set recipeId(covariant RecipeStubAllOfRecipeIdBuilder? recipeId) =>
+      _$this._recipeId = recipeId;
 
   String? _name;
   String? get name => _$this._name;
@@ -137,7 +139,7 @@ class RecipeStubBuilder
   RecipeStubBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _recipeId = $v.recipeId;
+      _recipeId = $v.recipeId.toBuilder();
       _name = $v.name;
       _keywords = $v.keywords;
       _dateCreated = $v.dateCreated;
@@ -165,21 +167,33 @@ class RecipeStubBuilder
   RecipeStub build() => _build();
 
   _$RecipeStub _build() {
-    final _$result = _$v ??
-        new _$RecipeStub._(
-            recipeId: BuiltValueNullFieldError.checkNotNull(
-                recipeId, r'RecipeStub', 'recipeId'),
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'RecipeStub', 'name'),
-            keywords: BuiltValueNullFieldError.checkNotNull(
-                keywords, r'RecipeStub', 'keywords'),
-            dateCreated: BuiltValueNullFieldError.checkNotNull(
-                dateCreated, r'RecipeStub', 'dateCreated'),
-            dateModified: dateModified,
-            imageUrl: BuiltValueNullFieldError.checkNotNull(
-                imageUrl, r'RecipeStub', 'imageUrl'),
-            imagePlaceholderUrl: BuiltValueNullFieldError.checkNotNull(
-                imagePlaceholderUrl, r'RecipeStub', 'imagePlaceholderUrl'));
+    _$RecipeStub _$result;
+    try {
+      _$result = _$v ??
+          new _$RecipeStub._(
+              recipeId: recipeId.build(),
+              name: BuiltValueNullFieldError.checkNotNull(
+                  name, r'RecipeStub', 'name'),
+              keywords: BuiltValueNullFieldError.checkNotNull(
+                  keywords, r'RecipeStub', 'keywords'),
+              dateCreated: BuiltValueNullFieldError.checkNotNull(
+                  dateCreated, r'RecipeStub', 'dateCreated'),
+              dateModified: dateModified,
+              imageUrl: BuiltValueNullFieldError.checkNotNull(
+                  imageUrl, r'RecipeStub', 'imageUrl'),
+              imagePlaceholderUrl: BuiltValueNullFieldError.checkNotNull(
+                  imagePlaceholderUrl, r'RecipeStub', 'imagePlaceholderUrl'));
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'recipeId';
+        recipeId.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'RecipeStub', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

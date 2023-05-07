@@ -39,7 +39,7 @@ void main() {
       final recipeWithoutImage = recipes.data
           ?.firstWhere((stub) => stub.name == "Recipe Without an image");
       final response = await instance.getImage(
-        id: recipeWithoutImage!.recipeId,
+        id: recipeWithoutImage!.recipeId.oneOf.value.toString(),
         headers: <String, dynamic>{
           "Accept": "image/svg+xml",
         },
@@ -50,7 +50,7 @@ void main() {
       final recipeWithImage = recipes.data
           ?.firstWhere((stub) => stub.name == "Chef John's Gazpacho");
       final response2 = await instance.getImage(
-        id: recipeWithImage!.recipeId,
+        id: recipeWithImage!.recipeId.oneOf.value.toString(),
         headers: <String, dynamic>{
           "Accept": "image/jpeg",
         },
@@ -88,7 +88,9 @@ void main() {
       final recipes = await instance.listRecipes();
 
       recipes.data?.forEach((recipe) async {
-        final response = await instance.recipeDetails(id: recipe.recipeId);
+        final response = await instance.recipeDetails(
+          id: recipe.recipeId.oneOf.value.toString(),
+        );
 
         expect(response.data, isNotNull);
       });

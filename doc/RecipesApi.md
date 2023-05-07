@@ -194,7 +194,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **newRecipe**
-> String newRecipe(recipe)
+> int newRecipe(recipe)
 
 Create a new recipe
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+**int**
 
 ### Authorization
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateRecipe**
-> String updateRecipe(id, recipe)
+> int updateRecipe(id, recipe)
 
 Update a recipe
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+**int**
 
 ### Authorization
 

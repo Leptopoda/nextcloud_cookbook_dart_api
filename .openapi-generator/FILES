@@ -14,6 +14,7 @@ doc/Recipe.md
 doc/RecipeAllOf.md
 doc/RecipeStub.md
 doc/RecipeStubAllOf.md
+doc/RecipeStubAllOfRecipeId.md
 doc/RecipeStubInformation.md
 doc/RecipesApi.md
 doc/RenameCategoryRequest.md
@@ -46,6 +47,7 @@ lib/src/model/recipe.dart
 lib/src/model/recipe_all_of.dart
 lib/src/model/recipe_stub.dart
 lib/src/model/recipe_stub_all_of.dart
+lib/src/model/recipe_stub_all_of_recipe_id.dart
 lib/src/model/recipe_stub_information.dart
 lib/src/model/rename_category_request.dart
 lib/src/model/url.dart
@@ -53,3 +55,8 @@ lib/src/model/version.dart
 lib/src/model/visible_info_blocks.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/recipe_all_of_test.dart
+test/recipe_stub_all_of_recipe_id_test.dart
+test/recipe_stub_all_of_test.dart
+test/recipe_stub_information_test.dart
+test/version_test.dart

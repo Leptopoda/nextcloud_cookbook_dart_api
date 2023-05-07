@@ -375,9 +375,9 @@ class RecipesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<String>> newRecipe({
+  Future<Response<int>> newRecipe({
     required Recipe recipe,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -432,10 +432,10 @@ class RecipesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    int _responseData;
 
     try {
-      _responseData = (_response.data as int).toString();
+      _responseData = _response.data as int;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -446,7 +446,7 @@ class RecipesApi {
       );
     }
 
-    return Response<String>(
+    return Response<int>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -633,9 +633,9 @@ class RecipesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<String>> updateRecipe({
+  Future<Response<int>> updateRecipe({
     required String id,
     required Recipe recipe,
     CancelToken? cancelToken,
@@ -692,10 +692,10 @@ class RecipesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    int _responseData;
 
     try {
-      _responseData = (_response.data as int).toString();
+      _responseData = _response.data as int;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -706,7 +706,7 @@ class RecipesApi {
       );
     }
 
-    return Response<String>(
+    return Response<int>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

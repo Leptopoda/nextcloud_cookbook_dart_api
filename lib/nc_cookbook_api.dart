@@ -25,6 +25,7 @@ export 'package:nc_cookbook_api/src/model/recipe.dart';
 export 'package:nc_cookbook_api/src/model/recipe_all_of.dart';
 export 'package:nc_cookbook_api/src/model/recipe_stub.dart';
 export 'package:nc_cookbook_api/src/model/recipe_stub_all_of.dart';
+export 'package:nc_cookbook_api/src/model/recipe_stub_all_of_recipe_id.dart';
 export 'package:nc_cookbook_api/src/model/recipe_stub_information.dart';
 export 'package:nc_cookbook_api/src/model/rename_category_request.dart';
 export 'package:nc_cookbook_api/src/model/url.dart';

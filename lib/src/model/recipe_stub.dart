@@ -3,8 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:nc_cookbook_api/src/model/recipe_stub_information.dart';
+import 'package:nc_cookbook_api/src/model/recipe_stub_all_of_recipe_id.dart';
 import 'package:nc_cookbook_api/src/model/recipe_stub_all_of.dart';
+import 'package:nc_cookbook_api/src/model/recipe_stub_information.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,7 +20,7 @@ part 'recipe_stub.g.dart';
 /// * [dateModified] - The date the recipe was modified lastly in the app
 /// * [imageUrl] - The URL of the recipe image
 /// * [imagePlaceholderUrl] - The URL of the placeholder of the recipe image
-/// * [recipeId] - The index of the recipe. Note this is a string and might change its appearance in the future.
+/// * [recipeId]
 @BuiltValue()
 abstract class RecipeStub
     implements
@@ -87,7 +88,7 @@ class _$RecipeStubSerializer implements PrimitiveSerializer<RecipeStub> {
     yield r'recipe_id';
     yield serializers.serialize(
       object.recipeId,
-      specifiedType: const FullType(String),
+      specifiedType: const FullType(RecipeStubAllOfRecipeId),
     );
   }
 
@@ -157,13 +158,11 @@ class _$RecipeStubSerializer implements PrimitiveSerializer<RecipeStub> {
           result.dateModified = valueDes;
           break;
         case r'recipe_id':
-          final valueDes = serializers
-              .deserialize(
-                value,
-                specifiedType: const FullType(int),
-              )
-              .toString();
-          result.recipeId = valueDes;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(RecipeStubAllOfRecipeId),
+          ) as RecipeStubAllOfRecipeId;
+          result.recipeId.replace(valueDes);
           break;
         default:
           unhandled.add(key);
